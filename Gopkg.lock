@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:dba99aa84d1a82d69232a0b789ebaacf5344d97c0a72ac88cf0c47b6f1f6e77e"
+  digest = "1:05a36a8278b95946f9da866a4c1fcb1f20f8353284454bc62293f45abc186dbf"
   name = "github.com/99designs/gqlgen"
   packages = [
     "api",
@@ -12,6 +12,7 @@
     "codegen/templates",
     "complexity",
     "graphql",
+    "graphql/introspection",
     "handler",
     "internal/code",
     "internal/imports",
@@ -50,6 +51,17 @@
   pruneopts = "UT"
   revision = "7087cb70de9f7a8bc0a10c375cb0d2280a8edf9c"
   version = "v0.5.1"
+
+[[projects]]
+  digest = "1:8ef506fc2bb9ced9b151dafa592d4046063d744c646c1bbe801982ce87e4bc24"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid",
+  ]
+  pruneopts = "UT"
+  revision = "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
@@ -115,6 +127,14 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/99designs/gqlgen/cmd"]
+  input-imports = [
+    "github.com/99designs/gqlgen/cmd",
+    "github.com/99designs/gqlgen/graphql",
+    "github.com/99designs/gqlgen/graphql/introspection",
+    "github.com/99designs/gqlgen/handler",
+    "github.com/lib/pq",
+    "github.com/vektah/gqlparser",
+    "github.com/vektah/gqlparser/ast",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

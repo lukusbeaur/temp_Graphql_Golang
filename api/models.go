@@ -1,4 +1,12 @@
-package ProjectQ_Reg_Login
+package api
+
+import (
+	"fmt"
+	"io"
+	"strconv"
+
+	"github.com/99designs/gqlgen/graphql"
+)
 
 type NewUser struct {
 	ID       int    `json:"id"`
@@ -14,14 +22,12 @@ type User struct {
 	Email string `json:"email"`
 }
 
-
 //redefine the base ID type to use an ID as an int
 func MarshalID(id int) graphql.Marshaler {
 	return graphql.WriterFunc(func(w io.Writer) {
 		io.WriteString(w, strconv.Quote(fmt.Sprintf("%d", id)))
 	})
 }
-
 
 // And the same for the unmarshaler ss
 func UnmarshalID(v interface{}) (int, error) {
